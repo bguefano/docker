@@ -1,0 +1,12 @@
+couchdb:
+  image: "apache/couchdb:2.1.1" 
+  volumes:
+    - ./data:/opt/couchdb/data
+    - ./etc/local.ini:/opt/couchdb/etc/local.d/local.ini
+    - ./log:/opt/couchdb/log 
+  ports:
+    - "5984:5984"
+  environment:
+    NODENAME: local
+    COUCHDB_USER: admin
+    COUCHDB_PASSWORD: password
